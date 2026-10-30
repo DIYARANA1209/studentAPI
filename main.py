@@ -60,3 +60,8 @@ def get_students(course: Optional[str] = None):
     if course:
         return [s for s in students if s["course"].lower() == course.lower()]
     return students
+
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
